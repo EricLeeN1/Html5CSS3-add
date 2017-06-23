@@ -1,0 +1,58 @@
+body {
+    background: #e8eadd;
+    color: #3c323a;
+    padding: 20px;
+}
+
+.wrapper {
+    width: 1200px;
+    /* Fallback for browsers that don't support the calc() function */
+    width: -moz-calc(100%-40px);
+    width: -webkit-calc(100%-40px);
+    width: calc(100%-40px);
+    margin: auto;
+}
+
+header {
+    background: #ff6600;
+    padding: 20px;
+    width: 1180px;
+    width: -moz-calc(100% - 40px);
+    width: -webkit-calc(100% - 40px);
+    width: calc(100% - 40px);
+    margin: auto;
+}
+
+main {
+    border: 8px solid #b8c172;
+    float: left;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    width: 880px;
+    width: -moz-calc(75% - 20px * 2 - 8px * 2);
+    width: -webkit-calc(75% - 20px * 2 - 8px * 2);
+    width: calc(75% - 20px * 2 - 8px * 2);
+}
+
+#accessory {
+    border: 8px solid #b8c172;
+    float: right;
+    padding: 10px;
+    width: 208px;
+    /* Fallback for browsers that don't support the calc() function */
+    width: -moz-calc(25% - 10px * 2 - 8px * 2 - 20px);
+    width: -webkit-calc(25% - 10px * 2 - 8px * 2 - 20px);
+    width: calc(25% - 10px * 2 - 8px * 2 - 20px);
+}
+
+footer {
+    clear: both;
+    background: #000;
+    padding: 20px;
+    color: #fff;
+    width: 1160px;
+    width: -moz-calc(100% - 40px);
+    width: -webkit-calc(100% - 40px);
+    width: calc(100% - 40px);
+}
