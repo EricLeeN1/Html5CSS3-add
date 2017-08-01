@@ -8,21 +8,30 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <style>
+        #canvas {
+            border: 1px solid red;
+        }
+    </style>
 </head>
 <body>
-<!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+<canvas width="400" height="400" id="canvas"></canvas>
+<script>
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = "#ff0000";
 
-<!-- Add your site or application content here -->
-<p></p>
-<script src="-{{JQUERY_VERSION}}.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+    //    ctx.fillRect(0,0,100,100);
+    //    ctx.beginPath();
+    //    ctx.arc(70,18,15,0,Math.PI*2,true);
+    //    ctx.closePath();
+    //    ctx.fill();
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    var img = new Image();
+    img.onload=function () {
+        ctx.drawImage(img,0,0);
+    }
+    img.src ="../images/1.jpg";
+</script>
 </body>
 </html>

@@ -8,21 +8,46 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script type="text/javascript" src="map.js"></script>
+    <style>
+        #main {
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        //获取当前地理位置
+        function init() {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                var coords = position.coords;
+                //设定地图参数，将用户的当前地理的经纬度设为地图中心点
+                var latlng = new google.maps.LatLng(coords.latitude, coords.longitude);
+                var myOptions = {
+                    zoom: 14,
+                    center: latlng,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                //创建地图并"map"div中显示
+                var map1;
+                map1 = new google.maps.Map(document.getElementById('map'), myOptions);
+                //地图上创建标记
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map1
+                });
+                //设定标准窗口，并制定该窗口的注释文件
+                var infowindow = new google.maps.Marker({
+                    content: "当前位置"
+                });
+                infowindow.open(map1, marker);
+            });
+        }
+    </script>
 </head>
-<body>
-<!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
-<!-- Add your site or application content here -->
-<p></p>
-<script src="-{{JQUERY_VERSION}}.min.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
-
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<body onload="init();">
+<div id="main" style="height: 1000px;width: 1000px;"></div>
+<script></script>
 </body>
 </html>

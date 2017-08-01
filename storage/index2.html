@@ -15,17 +15,25 @@
     </style>
 </head>
 <body>
-<textarea name="" id="ta" cols="30" rows="10"></textarea>
-<button id="btn">保存</button>
+<span id="txt">0</span>
+<button id="btn">增加</button>
 <script>
     window.onload = function () {
-        var ta = document.getElementById('ta');
+        var num = 0;
+        var txt = document.getElementById('txt');
         var btn = document.getElementById('btn');
-        if (localStorage.text) {
-            ta.value = localStorage.text;
-        };
+        if (window.sessionStorage.num) {
+            num = window.sessionStorage.num;
+        } else {
+            num = 0;
+        }
         btn.onclick = function () {
-            localStorage.text = ta.value;
+            num++;
+            window.sessionStorage.num = num;
+            showNum();
+        };
+        function showNum() {
+            txt.innerHTML = num
         }
     };
 </script>
