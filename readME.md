@@ -27,3 +27,19 @@
      appearance: value;
     }
 
+## 3.audio
+
+## 4.video
+
+## 5.HTML-5拖放
+
+	1. 设置元素为可拖放
+		draggable = "true"
+	2. 拖动什么
+		ondragstart和setData()
+	3. 放到何处
+		ondragover
+	4. 进行放置
+		ondrop
+	
+	
