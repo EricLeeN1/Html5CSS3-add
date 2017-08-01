@@ -29,8 +29,12 @@
     }
 
 ## 3.audio
+	
+	1. audio	
 
 ## 4.video
+	
+	2. video	
 
 ## 5.HTML-5拖放
 
@@ -94,7 +98,7 @@
 
 ## 15.CSS3-过渡
 		
-	transition
+	1. transition
 
 ## 16.CSS3-动画
 
